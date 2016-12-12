@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+<!--    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts"/> -->
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="/ Assorted crazy stuff / ">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="nbrk, linklevel, lambda">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="http://nbrk.linklevel.net/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+<!--    <title>nbrk @ linklevel</title> -->
+<title>Простой и удобный личный web-блог с Hakyll за десять минут</title>
+<!--    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title> -->
+
+    <!-- Property Metas --> 
+    <meta property="og:title" content="Простой и удобный личный web-блог с Hakyll за десять минут" />
+    <meta property="og:site_name" content="/ Assorted crazy stuff / " />
+
+    <!-- From Facebook examples -->
+    <meta property="og:type" content="blog" />
+    <meta property="og:description" content="Простой и удобный личный web-блог с Hakyll за десять минут" />
+    
+    <meta property="og:image" content="http://nbrk.linklevel.net/static/img/2016-12-09-hakyllblog.png" />
+    
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/spaceg.stylesheets.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Пркл нави</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nbrk.linklevel.net" id="blog-title-left-top">/nbrk/</a>
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
+                <ul class="dropdown-menu"></ul>
+                </li>
+                <li><a href="http://nbrk.linklevel.net/index.html" target="_self">Глвн</a></li>		
+                <li><a href="http://nbrk.linklevel.net/contact.html" target="_self">Связ</a></li>
+                <li><a href="http://nbrk.linklevel.net/projects.html" target="_self">Прое</a></li>
+		<li><a href="http://nbrk.linklevel.net/tags.html" target="_self">Метк</a></li>		
+                <li><a href="http://nbrk.linklevel.net/archive.html" target="_self">Архв</a></li>
+                <li><a href="http://www.linklevel.net" target="_self">ЛНКЛ</a></li>		
+                <li><a href="https://www.github.com/nbrk" id="roundbutton" target="_blank"><i class="fa fa-github"></i>nbrk</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">nbrk @ lnkl</h1>
+                            <hr class="star-primary">
+                            <img src="http://nbrk.linklevel.net/static/img/face.jpg" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                Это nbrk. А это мой блог. <br>
+                                Надеюсь, он тебе понравился. <br>
+                                <a href="https://www.github.com/nbrk" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Зкрт</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">nbrk</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+			      Изменение размера сегмента данных по существу заключается в изменении брейк-адреса. <br>
+			      Для изменения его значения UNIX предоставляет процессу три системных вызова — brk(2), sbrk(2) и nbrk (шутка).<br>
+                        <a href="https://www.github.com/nbrk" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                <li><a href="http://nbrk.linklevel.net/index.html" target="_self">Глвн</a></li>		
+                <li><a href="http://nbrk.linklevel.net/contact.html" target="_self">Связ</a></li>			
+                    <li><a href="http://nbrk.linklevel.net/projects.html" target="_self">Прое</a></li>
+			      <li><a href="http://nbrk.linklevel.net/tags.html" target="_self">Метк</a></li>
+			      <li><a href="http://nbrk.linklevel.net/archive.html" target="_self">Архв</a></li>
+			      
+			<li><a href="http://www.linklevel.net" target="_self">ЛНКЛ</a></li>					
+                            </p>
+                      
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Закр</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="content">
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://nbrk.linklevel.net/static/img/2016-12-09-hakyllblog.png')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Простой и удобный личный web-блог с Hakyll за десять минут</h1>
+                    
+                    <span class="meta">
+		    
+			December  9, 2016
+		    </span>
+
+                    <span class="meta">
+		    
+			Метки: <a href="../tags/hakyll.html">hakyll</a>
+		    
+		    </span>
+		    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			<blockquote>
+<p>Static sites are fast, secure, easy to deploy, and manageable using version control.</p>
+</blockquote>
+<h1 id="получение-сайта">Получение сайта</h1>
+<p>На машине для написания статей и генерации содержимого блога устанавливаем Haskell-окружение:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># установка нужных программ средствами ОС</span>
+<span class="kw">sudo</span> pkg install -y stack git
+
+<span class="co"># установка нужных haskell-библиотек </span>
+<span class="kw">stack</span> install hakyll</code></pre></div>
+<p>Создаём директорию с проектом<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> и генерим наш сайт:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># шаблон hakyll-проекта</span>
+<span class="kw">hakyll-init</span> my-site
+
+<span class="kw">cd</span> my-site
+
+<span class="co"># инициализация stack-проекта с имеющимся резолвером (снэпшотом haskell-платформы)</span>
+<span class="kw">stack</span> init --resolver lts-3.5
+<span class="co"># строим программу-генератор</span>
+<span class="kw">stack</span> build
+
+<span class="co"># генерим наш сайт</span>
+<span class="kw">stack</span> exec site build
+
+<span class="co"># просматриваем наш блог в браузере (http://127.0.0.1:8000)</span>
+<span class="kw">stack</span> exec site watch</code></pre></div>
+<p>Вот так выглядит ванильный блог Hakyll:</p>
+<div class="figure">
+<img src="../static/img/vanilla-hakyll.png" alt />
+
+</div>
+<p>На данном этапе мы уже получили полноценный блог-сайт и можем писать в него, создавая новые markdown-файлы в директории <code>posts/</code> и регенерируя содержимое с <code>stack exec site build</code>. После каждой регенерации директория <code>_site</code> будет содержать текущую версию нашего блога; содержимое этой директории полностью готово к закачиванию на web-сервер!</p>
+<pre><code>about.html
+archive.html
+contact.html
+css/
+images/
+index.html
+posts/</code></pre>
+<p>Как видим, для содержания такого блога никаких знаний Haskell не требуется.</p>
+<h1 id="помещение-сайта-в-систему-контроля-версий-git">Помещение сайта в систему контроля версий git</h1>
+<p>Некоторые блогеры могут закончить на прошлом шаге, но мы идём дальше и хотим поместить наш сайт в систему контроля версий, например git. Мы будем держать две ветки в репо:</p>
+<ol style="list-style-type: decimal">
+<li>ветку “hakyll” для отслеживания исходников сайта: наших постов (<code>.markdown</code>-файлов) и файлов hakyll (<code>.hs</code>-файлы, HTML-шаблоны, CSS, картинки, и т.д.)</li>
+<li>ветку “master” для отслеживания нашего wwwroot: чистой, готовой к публикации на любой web-сервер директории с текущим сайтом (готовые HTML-файлы, CSS, картинки, и т.д.)</li>
+</ol>
+<h3 id="бесплатный-хостинг-web-сайтов-на-github.io">Бесплатный хостинг web-сайтов на github.io</h3>
+<p>Разумеется, подойдёт любая система контроля версий (svn, darcs, и т.д.), но мы выбрали git чтобы продемонстрировать работу нашего сайта, воспользовавшись бесплатным web-хостингом проектов с <a href="http://github.com">Github</a>.</p>
+<p>Если пользователь гитхаба <code>user</code> создаёт пеозиторий на github.com и называет его специальным именем <code>user.github.io</code>, то по web-адресу</p>
+<pre><code>http://user.github.io</code></pre>
+<p>автоматически будет доступен текущий срез ветки “master” нашего проекта <code>user.github.io</code>. Если в ветке окажется файлик <code>index.html</code>, то web-серверы github автоматически отдадут его web-клиенту и мы получим бесплатный хостинг с именем домена третьего уровня <code>&lt;наше_имя&gt;.github.io</code>. Более тонкая настройка GitHub Pages доступна в параметрах репозитория на сайте Github.</p>
+<p>Предположим, что наше github-имя звучит <code>my-site</code> и мы хотим получить блог на <code>my-site.github.io</code>.</p>
+<h3 id="настройка-git-для-нашего-блога">Настройка git для нашего блога</h3>
+<p>Для начала мы создаём новый проект (репозиторий) <code>my-site.github.io</code> на github.com и в настройках проекта добавляем свой публичный ключ (<code>~/.ssh/id_rsa.pub</code>) с правами на запись в репо, чтобы каждый раз не вводить пароль. Далее, инициализируем локальный репозиторий в директории нашего блога, не забыв создать файл <code>.gitignore</code> со списком объектов, которые мы <strong>не</strong> хотим помещать под контроль версий (сюда относятся промежуточные файлы Haskell и stack, используемые для сборки программы-генератора на локальшной машине).</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># файлы Haskell-проектов, обычно исключаемые из контроля версий</span>
+<span class="kw">cat</span> <span class="kw">&gt;</span> .gitignore</code></pre></div>
+<pre><code># Created by https://www.gitignore.io/api/haskell
+TAGS
+*~
+
+### Haskell ###
+dist
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+.stack-work/
+_cache/
+_site/
+.DS_Store</code></pre>
+<p>Итак, инициализируем локальный и удалённый репозиторий.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># инит репо в директории блога</span>
+<span class="kw">git</span> init
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;Initial commit&quot;</span>
+<span class="kw">git</span> remote add origin git@github.com:<span class="kw">&lt;</span>имя-пользователя-гитхаб<span class="kw">&gt;</span>/<span class="kw">&lt;</span>имя-репозитория<span class="kw">&gt;</span>.github.io.git
+
+<span class="co"># мы находимся в директории нашего блога и подготовили репо</span>
+
+<span class="co"># метим текущие файлы веткой &quot;hakyll&quot;, веткой исходника блога</span>
+<span class="kw">git</span> checkout -b hakyll
+<span class="kw">git</span> push -u origin hakyll
+
+<span class="co"># возвращаемся на ветку &quot;master&quot;, где мы будем хранить файлы для web-сервера</span>
+<span class="kw">git</span> checkout master
+
+<span class="co"># удаляем все файлы с этой ветки (мы хотим хранить здесь только содержимое _site/)</span>
+<span class="kw">rm</span> -rf *
+<span class="kw">rm</span> .ghci
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;Delete all files&quot;</span>
+<span class="kw">git</span> push -u origin master</code></pre></div>
+<p>Удалённый репозиторий подготовлен.</p>
+<h3 id="автоматизация-процесса-генерации-коммита-закачки-блога">Автоматизация процесса генерации-коммита-закачки блога</h3>
+<p>Всё готово. Мы можем обновлять наш блог следующим образом:</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Убеждаемся, что работаем сейчас со свежей веткой “hakyll”</li>
+<li><a href="2016-12-09-hakylladdpost.html">Пишем в блог</a> или редактируем предыдущие записи/добавляем/удаляем файлы, меняем css-стили или html-шаблоны, и т.д., пока не будем довольны результатом всего сайта на 127.0.0.1:8000</li>
+<li>Перестраиваем haskell-программу (генератор нашего блога) и коммитим в “hakyll” изменения в исходниках блога (а также любые новые файлы и т.д.)</li>
+<li>Переключаемся на ветку “master” и удаляем <em>все</em> файлы (может быть, кроме <code>README.md</code> для сайта github.com)</li>
+<li>Переключаемся на ветку “hakyll” и генерируем содержание сайта</li>
+<li>Переключаемся на ветку “master” и коммитим все файлы из директории <code>_site</code></li>
+<li>(если не используем бесплатный хостинг на github.io) закачиваем файлы из ветки “master” на web-хостинг: в директорию нашего сайта на web-сервере</li>
+<li>Возвращаемся на ветку “hakyll” (в исходное состояния, шаг 0)</li>
+</ol>
+<p>Однако лень так делать руками каждый раз, поэтому процесс нужно автоматизировать. Некто <a href="http://ismailmustafa.com/posts/2016-01-24-hakyllSetup.html">ismailmustafa</a>, чьи исходники блога я приспосабливал под себя, <a href="https://github.com/ismailmustafa/ismailmustafa.github.io/blob/hakyll/deploy">написал</a> простенький скриптик “развёртывания” блога на <code>bash</code>. Я же немного подправил лентяйский скриптик для работы на обычном <code>/bin/sh</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># вся подобная работа только на ветке разработчика</span>
+<span class="kw">git</span> checkout -b hakyll
+
+<span class="co"># сохраняем скриптик ниже в файл с именем &quot;deploy&quot;</span>
+<span class="kw">touch</span> deploy
+<span class="kw">chmod</span> +x deploy</code></pre></div>
+<p>А вот и сам скриптик. Подправляем часть закачки<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> на хостинг (rsync) под себя или отключаем её вовсе, если наш сайт размещается на хостинге github.io.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
+
+<span class="fu">error_exit()</span>
+<span class="kw">{</span>
+    <span class="kw">echo</span> <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span> <span class="kw">1&gt;&amp;2</span>
+    <span class="kw">exit</span> 1
+<span class="kw">}</span>
+
+<span class="co"># Check if commit message argument</span>
+<span class="kw">if [</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span><span class="kw"> ]</span>
+<span class="kw">then</span>
+  <span class="kw">echo</span> <span class="st">&quot;deploy script error: What changes did you make? Type a commit message.&quot;</span>
+  <span class="kw">exit</span> 1
+<span class="kw">fi</span>
+
+<span class="co"># Build successfuly or exit</span>
+<span class="kw">stack</span> clean
+<span class="kw">stack</span> build <span class="kw">||</span> <span class="kw">error_exit</span> <span class="st">&quot;deploy script error: Build failed&quot;</span>
+
+<span class="co"># Push changes on hakyll branch to github</span>
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span> <span class="kw">||</span> <span class="kw">error_exit</span> <span class="st">&quot;deploy script error: no changes to commit&quot;</span>
+<span class="kw">git</span> push origin hakyll
+
+<span class="co"># Switch to master branch</span>
+<span class="kw">git</span> checkout master
+
+<span class="co"># delete old site</span>
+<span class="kw">rm</span> -rf *
+<span class="kw">git</span> add -A <span class="kw">&amp;&amp;</span> <span class="kw">git</span> commit -m <span class="st">&quot;delete old site&quot;</span>
+
+<span class="co"># switch to hakyll branch and rebuild website</span>
+<span class="kw">git</span> checkout hakyll
+<span class="kw">stack</span> exec site rebuild
+
+<span class="co"># switch to master, extract site and push</span>
+<span class="kw">git</span> checkout master
+<span class="kw">mv</span> _site/* .
+<span class="kw">git</span> add -A <span class="kw">&amp;&amp;</span> <span class="kw">git</span> commit --amend -m <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span>
+<span class="kw">git</span> push origin master
+
+<span class="co"># rsync with remote wwwroot</span>
+<span class="kw">rm</span> -rf _site
+<span class="kw">rm</span> -rf _cache
+<span class="kw">rsync</span> -av * nbrk@linklevel.net:~/nbrk.linklevel.net.wwwroot
+
+<span class="co"># return to original branch</span>
+<span class="kw">git</span> checkout hakyll</code></pre></div>
+<h1 id="написание-первого-поста-в-наш-блог">Написание первого поста в наш блог</h1>
+<p>Вот, собственно, и всё! Сделать запись – <a href="2016-12-09-hakylladdpost.html">проще пареной репы</a>.</p>
+<p>Например, так:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> <span class="kw">&gt;</span> posts/2016-12-12-hello.markdown</code></pre></div>
+<pre><code>---
+title: Привет, hakyll! 
+tags: блог, жизнь
+---
+
+Кто-то ковыряется с `wordpress`, зависит от куч баз данных и милости хакеров. А я теперь знаю, что:
+
+&gt; Static sites are fast, secure, easy to deploy, and manageable using version control.
+
+Вот так! А markdown *очень крут*. </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># разворачиваем обновление</span>
+<span class="kw">./deploy</span> <span class="st">&quot;add post about Hakyll&quot;</span></code></pre></div>
+<h1 id="клонирование-существующих-блогов">Клонирование существующих блогов</h1>
+<p>Такой приятный процесс управления личным сайтом посредством системы контроля версий, а также чёткое разделение генератора (т.е. функционала сайта), шаблонов (т.е. дизайна сайта) и markdown-файлов (т.е. содержания сайта) в системе Hakyll делают удобным клонирование уже существующих решений, на базе которых можно строить всё более сложные и многофункциональные сайты.</p>
+<p>На самом деле, блогеры сообщества Hakyll обожают так делать, и вы можете полностью склонировать большое количество разных репозиториев с блогами разнообразных дизайнов и функционалов, просто выберите полюбившийся из списка <a href="https://jaspervdj.be/hakyll/examples.html">People using Hakyll</a>.</p>
+<p>Мой репозиторий базируется на скромном сайте <a href="http://ismailmustafa.com/">ismailmustafa</a>. Среди функций его блога автогенерация “фрактальных” (на самом деле нет) цветных картинок к заголовкам постов. Я же добавил к этому поддержку тэгов (меток) в постах, а также страницу с облаком тэгов. Я выбросил из дизайна ненужные мне ссылки на социальные сети и немного подкрутил Open Graph параметры в <meta> для корректной вставки ссылок в пэйсбук.</p>
+<p>Скачать исходники моего блога можно <a href="http://nbrk.linklevel.net/blog-sources.tgz">тут</a>. После распаковки архива можно сразу же делать записи в markdown и развёртывать блог скриптом.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>На некоторых системах stack помещает бинарники в <code>~/.local/bin</code> , что может не входить в юзерский $PATH<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Также важно обратить внимание, чтобы название программы после <code>stack exec</code> соответствовало названию cabal-пакета<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>	
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//nbrk.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</article>
+<hr>
+
+
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        
+                     
+                    <li>
+                        <a href="https://github.com/nbrk" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk<br><br> 
+                </p>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated with
+            <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>,
+	    a Haskell library for generating static sites.
+     </p>
+    </div>
+
+
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="http://nbrk.linklevel.net/static/js/jquery.min.js"></script>
+<script src="http://nbrk.linklevel.net/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="http://nbrk.linklevel.net/static/js/bootstrap.min.js"></script>
+<!-- nbrk <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+<script src="http://nbrk.linklevel.net/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

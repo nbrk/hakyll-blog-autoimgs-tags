@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+<!--    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts"/> -->
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="/ Assorted crazy stuff / ">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="nbrk, linklevel, lambda">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="http://nbrk.linklevel.net/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+<!--    <title>nbrk @ linklevel</title> -->
+<title>Мини-песочница разметки markdown</title>
+<!--    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title> -->
+
+    <!-- Property Metas --> 
+    <meta property="og:title" content="Мини-песочница разметки markdown" />
+    <meta property="og:site_name" content="/ Assorted crazy stuff / " />
+
+    <!-- From Facebook examples -->
+    <meta property="og:type" content="blog" />
+    <meta property="og:description" content="Мини-песочница разметки markdown" />
+    
+    <meta property="og:image" content="http://nbrk.linklevel.net/static/img/2016-12-09-entermarkdown.png" />
+    
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/spaceg.stylesheets.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="http://nbrk.linklevel.net/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Пркл нави</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nbrk.linklevel.net" id="blog-title-left-top">/nbrk/</a>
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
+                <ul class="dropdown-menu"></ul>
+                </li>
+                <li><a href="http://nbrk.linklevel.net/index.html" target="_self">Глвн</a></li>		
+                <li><a href="http://nbrk.linklevel.net/contact.html" target="_self">Связ</a></li>
+                <li><a href="http://nbrk.linklevel.net/projects.html" target="_self">Прое</a></li>
+		<li><a href="http://nbrk.linklevel.net/tags.html" target="_self">Метк</a></li>		
+                <li><a href="http://nbrk.linklevel.net/archive.html" target="_self">Архв</a></li>
+                <li><a href="http://www.linklevel.net" target="_self">ЛНКЛ</a></li>		
+                <li><a href="https://www.github.com/nbrk" id="roundbutton" target="_blank"><i class="fa fa-github"></i>nbrk</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">nbrk @ lnkl</h1>
+                            <hr class="star-primary">
+                            <img src="http://nbrk.linklevel.net/static/img/face.jpg" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                Это nbrk. А это мой блог. <br>
+                                Надеюсь, он тебе понравился. <br>
+                                <a href="https://www.github.com/nbrk" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Зкрт</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">nbrk</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+			      Изменение размера сегмента данных по существу заключается в изменении брейк-адреса. <br>
+			      Для изменения его значения UNIX предоставляет процессу три системных вызова — brk(2), sbrk(2) и nbrk (шутка).<br>
+                        <a href="https://www.github.com/nbrk" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                <li><a href="http://nbrk.linklevel.net/index.html" target="_self">Глвн</a></li>		
+                <li><a href="http://nbrk.linklevel.net/contact.html" target="_self">Связ</a></li>			
+                    <li><a href="http://nbrk.linklevel.net/projects.html" target="_self">Прое</a></li>
+			      <li><a href="http://nbrk.linklevel.net/tags.html" target="_self">Метк</a></li>
+			      <li><a href="http://nbrk.linklevel.net/archive.html" target="_self">Архв</a></li>
+			      
+			<li><a href="http://www.linklevel.net" target="_self">ЛНКЛ</a></li>					
+                            </p>
+                      
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Закр</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="content">
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://nbrk.linklevel.net/static/img/2016-12-09-entermarkdown.png')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Мини-песочница разметки markdown</h1>
+                    
+                    <span class="meta">
+		    
+			December  9, 2016
+		    </span>
+
+                    <span class="meta">
+		    
+			Метки: <a href="../tags/markdown.html">markdown</a>, <a href="../tags/%D1%81%D0%B5%D0%B1%D0%B5.html">себе</a>
+		    
+		    </span>
+		    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			<p><strong>Markdown</strong> - это простой формат разметки текстовой информации человеком, который легко писать и (немаловажно) читать. Подробнее про этот формат можно почитать <a href="https://daringfireball.net/projects/markdown/syntax">на страничке создателя</a>, но лучше обратиться к <a href="http://pandoc.org/MANUAL.html#pandocs-markdown">документации к pandoc</a>, поскольку эта haskell-библиотека обобщает формат <code>md</code> для генерации огромного числа других репрезентаций текста (pdf, word, odt, …), а не только HTML.</p>
+<p><strong>Внимание:</strong></p>
+<blockquote>
+<p>Текст на этой странице не несёт смысла и предназначен для демонстрации возможностей markdown.</p>
+<p>Эту страницу следует читать в её исходнике (file.markdown), смотря на готовый результат в HTML</p>
+<hr />
+</blockquote>
+<h1 id="первый-заголовок.">Первый заголовок.</h1>
+<p>Параграф ля ля ля<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Продолжение параграфа ля ля.<br />
+Новая строка?</p>
+<p>После параграфа следует одна или более пустых строк, т.е. это уже следующий параграф.</p>
+<h1 id="заголовок-a-уровень-1">Заголовок A, уровень 1</h1>
+<p>Текст под заголоком.</p>
+<h3 id="lala">Подзаголовок, уровень 2</h3>
+<p>Текст под внутренним заголовком</p>
+<h1 id="заголовок-б-уровень-1">Заголовок Б, уровень 1</h1>
+<p>Текст под заголоком. Простой список 1. апельсин 2. банан 3. яблоко И другие фрукты параграфа после списка.</p>
+<p>Смотри секцию под <a href="#lala">подзаголовком А</a> (идентификатор #lala) или <a href="#заголовок-б-уровень-1">под заголовком Б</a>. Очень круто.</p>
+<blockquote>
+<p>This is a block quote. This paragraph has two lines.</p>
+<ol style="list-style-type: decimal">
+<li>This is a list inside a block quote.</li>
+<li>Second item.</li>
+</ol>
+</blockquote>
+<p>А это уже просто текст следующего параграфа. Символ &gt; в блок-цитате выше должен быть в начале строки. Пробелы после &gt; считаются частью самого маркера; чтобы сделать реальный отступ надо использовать пять пробелов или больше:</p>
+<blockquote>
+<p>Просто блок-цитата</p>
+</blockquote>
+<blockquote>
+<pre><code> цитата с отступом</code></pre>
+</blockquote>
+<blockquote>
+<pre><code>        ещё цитата с отступом</code></pre>
+</blockquote>
+<p>Вот так. На этом всё о блок-цитатах.</p>
+<p>Текст, начинающийся с табуляции, считается verbatim, то есть отображается в блоге “как есть”:</p>
+<pre><code>if (a &gt; 3) {
+	moveShip(5 * gravity, DOWN);
+}</code></pre>
+<p>Следует обратить внимание, что это свойство, блок-цитаты (выше) и другие стили форматирования относятся к параграфам, то есть кускам текста, отделённым от осталного содержимого одной или более пустой строкой. То есть verbatim-текст выше - это, формально, другой параграф.</p>
+<h2 id="блоки-кода">Блоки кода</h2>
+<p>Можно легко отображать блоки кода:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (a &gt; <span class="dv">3</span>) {
+  moveShip(<span class="dv">5</span> * gravity, DOWN);
+}</code></pre></div>
+<p>Это очень удобно; поддерживается множество syntax-highlighting для скриптов и языков программирования. Блоки кода без указания языка программирования/подсветки эквивалентны обычным verbatim-блокам с клавишы tab?<br />
+Можно и нумерацию строк добавить (и/или идентификатор для ссылки):</p>
+<div class="sourceCode" startFrom="10"><table class="sourceCode haskell numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>10
+11
+12
+</pre></td><td class="sourceCode"><pre><code class="sourceCode haskell">qsort []     <span class="fu">=</span> []
+qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<span class="fu">&lt;</span> x) xs) <span class="fu">++</span> [x] <span class="fu">++</span>
+               qsort (filter (<span class="fu">&gt;=</span> x) xs)</code></pre></td></tr></table></div>
+<p>Есть line blocks для стихов или адресов, это блок со строками, начинающимися с | :</p>
+<p>The limerick packs laughs anatomical<br />
+In space that is quite economical.<br />
+   But the good ones I’ve seen<br />
+   So seldom are clean<br />
+And the clean ones so seldom are comical</p>
+<p>Адрес:</p>
+<p>200 Main St.<br />
+Berkeley, CA 94718</p>
+<p>Вот так.</p>
+<h2 id="списки-сквозные-и-номерные">Списки сквозные и номерные</h2>
+<p>Удобно делать списки:</p>
+<ul>
+<li>элемент А</li>
+<li><p>элемент Б<br />
+У элемента Б есть параграф. С кодом и цитатой:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (a &gt; <span class="dv">3</span>) {
+	moveShip(<span class="dv">5</span> * gravity, DOWN);
+}</code></pre></div>
+<p>Цитата:</p>
+<blockquote>
+<p>To be or not to be?</p>
+</blockquote>
+<p>Все новые блоки внутри блока элемента списка должны начинаться с таба (это логично).</p></li>
+<li><p>элемент В</p></li>
+</ul>
+<p>А это уже новый параграф (блок) после списка. Собственно, в списке выше каждый * начинает параграф. Можно вкладывать списки друг в друга:</p>
+<ul>
+<li>fruits
+<ul>
+<li>apples
+<ul>
+<li>macintosh<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></li>
+<li>red delicious</li>
+</ul></li>
+<li>pears</li>
+<li>peaches</li>
+</ul></li>
+<li>vegetables
+<ul>
+<li>broccoli</li>
+<li>chard</li>
+</ul></li>
+</ul>
+<p>Знаки *, + и - отрисовываются в “точку” немного по-разному, см. выше. Номерные списки:</p>
+<ol style="list-style-type: decimal">
+<li>one</li>
+<li>two
+<ol style="list-style-type: lower-roman">
+<li>правило один</li>
+<li>правило два (римские цифры)</li>
+</ol></li>
+<li>three</li>
+</ol>
+<p>Вот, собственно, и всё про базовый синтаксис markdown.<br />
+Кстати, много символов - или * дают горизонтальную линию.</p>
+<hr />
+<h1 id="дополнительно">Дополнительно</h1>
+<h2 id="дефиниции">Дефиниции</h2>
+<p>Есть и такой формат, удобный для определений. Фактически, ничего нового.</p>
+<dl>
+<dt>Term 1</dt>
+<dd><p>Definition 1</p>
+</dd>
+<dt>Term 2 with <em>inline markup</em></dt>
+<dd><p>Definition 2</p>
+<pre><code>{ some code, part of Definition 2 }</code></pre>
+<p>Third paragraph of definition 2.</p>
+</dd>
+</dl>
+<hr />
+<h2 id="список-примеров">Список примеров</h2>
+<p>Вот такой:</p>
+<ol style="list-style-type: decimal">
+<li>My first example will be numbered (1).</li>
+<li>My second example will be numbered (2).</li>
+</ol>
+<p>Explanation of examples.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>My third example will be numbered (3).</li>
+</ol>
+<p>То есть (@) автоматически заменяется на цифру в скобках?</p>
+<h1 id="таблицы">Таблицы</h1>
+<p>Есть и таблицы:</p>
+<table>
+<caption>Demonstration of simple table syntax.</caption>
+<thead>
+<tr class="header">
+<th align="right">Right</th>
+<th align="left">Left</th>
+<th align="center">Center</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">12</td>
+<td align="left">12</td>
+<td align="center">12</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="right">123</td>
+<td align="left">123</td>
+<td align="center">123</td>
+<td align="left">123</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">1</td>
+<td align="center">1</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<p>Крутяк. Текст в ячейках может быть на нескольких строках:</p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="20%" />
+<col width="31%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center">First</td>
+<td align="left">row</td>
+<td align="right">12.0</td>
+<td align="left">Example of a row that spans multiple lines.</td>
+</tr>
+<tr class="even">
+<td align="center">Second</td>
+<td align="left">row</td>
+<td align="right">5.0</td>
+<td align="left">Here’s another one. Note the blank line between rows.</td>
+</tr>
+</tbody>
+</table>
+<p>А вот сложная таблица с выравниванием.</p>
+<table>
+<caption>Here’s the caption. It, too, may span multiple lines.</caption>
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="20%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Centered Header</th>
+<th align="left">Default Aligned</th>
+<th align="right">Right Aligned</th>
+<th align="left">Left Aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">First</td>
+<td align="left">row</td>
+<td align="right">12.0</td>
+<td align="left">Example of a row that spans multiple lines.</td>
+</tr>
+<tr class="even">
+<td align="center">Second</td>
+<td align="left">row</td>
+<td align="right">5.0</td>
+<td align="left">Here’s another one. Note the blank line between rows.</td>
+</tr>
+</tbody>
+</table>
+<p>Выравнивание:</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">русский</th>
+<th align="left">английский</th>
+<th align="left">норвежский</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">одн /<br />
+ед(и)н</td>
+<td align="left">one</td>
+<td align="left">en</td>
+</tr>
+<tr class="even">
+<td align="left">два</td>
+<td align="left">two</td>
+<td align="left">to</td>
+</tr>
+<tr class="odd">
+<td align="left">три</td>
+<td align="left">three</td>
+<td align="left">tre</td>
+</tr>
+</tbody>
+</table>
+<p>Слишком просто, чтобы быть правдой!</p>
+<p>Вот так! Можно и по-другому (удобно из emacs):</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Fruit</th>
+<th align="left">Price</th>
+<th align="left">Advantages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>Bananas</p></td>
+<td align="left"><p>$1.34</p></td>
+<td align="left"><ul>
+<li>built-in wrapper</li>
+<li>bright color</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Oranges</p></td>
+<td align="left"><p>$2.10</p></td>
+<td align="left"><ul>
+<li>cures scurvy</li>
+<li>tasty</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="выделение-слов-в-тексте">Выделение слов в тексте</h1>
+<p>Можно выделать слова жирным или курсивом. This text is <em>emphasized with underscores</em>, and this is <em>emphasized with asterisks</em>. This is <strong>strong emphasis</strong> and <strong>with underscores</strong>. This <del>is deleted text.</del></p>
+<p>Это будет работать в markdown, но при генерации html-страниц блога стили CSS могут переопределять стили pandoc?</p>
+<p>А можно написать вот так: H<sub>2</sub>O is a liquid. Или 2<sup>10</sup> is 1024. Почти как в L<sub>A</sub>T<sub>E</sub>X.</p>
+<h1 id="ссылки-на-объекты-внутри-текста-или-вне-его-uri">Ссылки на объекты внутри текста или вне его (URI)</h1>
+<p>Можно тупо написать текст в угловых кавычках и получить ссылки вроде <a href="http://google.com" class="uri">http://google.com</a> и <script type="text/javascript">
+<!--
+h='&#x67;&#114;&#x65;&#x65;&#110;&#46;&#x65;&#x67;&#x67;&#x73;&#46;&#104;&#x61;&#x6d;';a='&#64;';n='&#x73;&#x61;&#x6d;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>sam at green dot eggs dot ham</noscript>.</p>
+<p>Вообще же, формат таков: [текст](URL). Например: Эй, <a href="http://nbrk.linklevel.net">тут</a> моя страничка!</p>
+<p>Можно и так: See <a href="http://foo.bar.baz">my website</a>. Т.е. расшифровать ссылки в конце текста.</p>
+<h2 id="картинки">Картинки</h2>
+<p>Ссылкы после ! будут трактоваться как картинки. Например, <img src="../static/img/haskell-logo.png" alt /></p>
+<h1 id="прочее">Прочее</h1>
+<p>Можно добавить фон к тексту (выделить его): what is the difference between <code>&gt;&gt;=</code> and <code>&gt;&gt;</code>?</p>
+<p>Всё между <code>$ ... $</code> будет трактоваться как T<sub>e</sub>X математика. Вообще, можно встраивать все команды T<sub>e</sub>X и L<sub>A</sub>T<sub>E</sub>X прямо в markdown <strong>без изменения</strong>!</p>
+<h2 id="примечания">Примечания</h2>
+<p>Даже примечания можно оставлять. Просто и понятно. Here is an inline note.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Не стоит смотреть на эту HTML страницу. Смотрите на её исходник, т.е. <em>markdown</em> файл.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Причём тут макинтош, для меня загадка.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Inlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>	
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//nbrk.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</article>
+<hr>
+
+
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        
+                     
+                    <li>
+                        <a href="https://github.com/nbrk" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk nbrk<br><br> 
+                </p>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated with
+            <a href="http://jaspervdj.be/hakyll" target="_blank">Hakyll</a>,
+	    a Haskell library for generating static sites.
+     </p>
+    </div>
+
+
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="http://nbrk.linklevel.net/static/js/jquery.min.js"></script>
+<script src="http://nbrk.linklevel.net/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="http://nbrk.linklevel.net/static/js/bootstrap.min.js"></script>
+<!-- nbrk <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+<script src="http://nbrk.linklevel.net/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>
