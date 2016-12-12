@@ -1,0 +1,108 @@
+<!-- Post Header -->
+$if(headerImg)$
+<header class="intro-header" style="background-image: url('$baseurl$/static/img/$headerImg$')" alt="" title="">
+$else$
+<header class="intro-header" style="background-image: url('$baseurl$/static/img/default.png')" alt="" title="">
+$endif$
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>$title$</h1>
+                    $if(subtitle)$
+                    <h2 class="subheading">$subtitle$</h2>
+                    $endif$
+                    <span class="meta">
+		    $if(author)$
+			Posted by $author$
+		    $endif$
+			$date$
+		    </span>
+
+                    <span class="meta">
+		    $if(tags)$
+			Метки: $tags$
+		    $endif$
+		    </span>
+		    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			$body$	
+
+                <hr>
+
+                <ul class="pager">
+                    $if(previous.url)$
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Предыдущая запись</a>
+                    </li>
+                    $endif$
+                    $if(next.url)$
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Следующая запись &rarr;</a>
+                    </li>
+                    $endif$
+                </ul>
+
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//nbrk.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</article>
+<hr>
+
+
